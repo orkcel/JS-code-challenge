@@ -235,3 +235,20 @@ const calcAverage3 = arr => {
 const averageTotal = calcAverage3(totals);
 console.log('Average Total:', averageTotal);
 
+// Developer Skills & Editor Setup
+
+// Coding Challenge #1
+
+function printForecast(arr) {
+    let str = "";
+    for (let i = 0; i < arr.length; i++) {
+        str += `${arr[i]}ºC in ${i + 1} day(s)`;
+    }
+    console.log(str);
+}
+printForecast([17, 21, 23]);
+printForecast([12, 5, -5, 0, 4]);
+
+const numbers = [33, 2, 8];
+numbers.sort();
+console.log(numbers[1])
