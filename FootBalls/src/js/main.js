@@ -81,6 +81,7 @@ printGoals(...game.scored);
 team1 < team2 && console.log("Team 1 is likely to win");
 
 console.log('Coding Challenge #2');
+
 // Coding Challenge #2
 
 // Task 1
@@ -89,7 +90,23 @@ for (const [i, player] of game.scored.entries()) {
 }
 
 // Task 2
+const scores = Object.values(game.scored);
+let averageScore = 0;
+for (const score of game.scored) {
+    averageScore += scores.length;
+}
+averageScore /= game.scored.length;
+console.log('Average Score:', averageScore);
 
+// Task 3
+
+
+// Bonus
+const scorers = {};
+for (const player of game.scored) {
+    scorers[player] = (scorers[player] || 0) + 1;
+}
+console.log(scorers);
 
 console.log('Coding Challenge #3')
 // Coding Challenge #3
@@ -116,14 +133,22 @@ console.log(events);
 gameEvents.delete(64);
 console.log(gameEvents);
 
+// Task 3
+console.log(`An event happened, on average, every ${90/ gameEvents.size} minutes`)
+
 
 console.log('Coding Challenge #4')
 // Coding Challenge #4
 
+for (const [minute, event] of gameEvents) {
+    const half = minute <= 45 ? 'First' : 'Second';
+    console.log(`[${half} Half] ${minute}: ${event}`);
+}
+
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-document.querySelector('button').textContent = 'Convert'; // Добавим текст на кнопку
+document.querySelector('button').textContent = 'Convert';
 
 document.querySelector('button').addEventListener('click', () => {
     const text = document.querySelector('textarea').value;
